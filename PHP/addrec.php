@@ -29,7 +29,7 @@
   </nav>
 
   <div class="container">
-    <header>Registration</header>
+    <header>Senior Citizen Registration</header>
 
     <form action="#">
       <div class="form first">
