@@ -25,9 +25,9 @@ include "config/read.php";
         <nav>
             <div class="brngyLbl">BARANGAY 48, PASAY CITY</div>
                 <ul class="navItems">
-                    <li id = "db"><a href="indexDashBoard.php">DASHBOARD</li>
-                    <li id = "af"><a href="addrec.php">ADD REC</li>
-                    <li id = "sc"><a href="indexRead.php">SENIOR CITIZENS</li>
+                    <li id = "db"><a href="userdashboard.php">DASHBOARD</li>
+                    <li id = "af"><a href="indexApplicForm.php">ADD REC</li>
+                    <li id = "sc"><a href="indexuser.php">SENIOR CITIZENS</li>
                 </ul>
 
                 <div class="logo">
@@ -148,7 +148,6 @@ include "config/read.php";
                     <th scope = "col" class="tbl-colHeader">Birth Date</th>
                     <th scope = "col" class="tbl-colHeader">Age</th>
                     <th scope = "col" class="tbl-colHeader">SC No.</th>
-                    <th scope = "col" class="tbl-colHeader" id ="EditDat">Edit | Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -166,12 +165,7 @@ include "config/read.php";
                     <td><?php echo $rows['BirthDate']?></td>
                     <td><?php echo $rows['Age']?></td>
                     <td><?php echo $rows['SCNum']?></td>
-                    <td><a href="UpdRecSection.php?ResidentID=<?=$rows['ResidentID']?>"
-                        class="btnEdit" id="Up">UPDATE</a>
 
-                        <a href="config/delete.php?ResidentID=<?=$rows['ResidentID']?>"
-                        class="btnDel" id="Del">DELETE</a>
-                    </td>
                 </tr>
                 <?php } ?>
             </tbody>

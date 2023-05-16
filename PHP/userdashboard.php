@@ -27,9 +27,9 @@ $result = mysqli_query($con, $query);
         <nav>
             <div class="brngyLbl">BARANGAY 48, PASAY CITY</div>
                 <ul class="navItems">
-                    <li id = "db"><a href="#">DASHBOARD</li>
+                    <li id = "db"><a href="userdashboard.php">DASHBOARD</li>
                     <li id = "af"><a href="addrec.php">ADD REC</li>
-                    <li id = "sc"><a href="indexRead.php">SENIOR CITIZENS</li>
+                    <li id = "sc"><a href="indexuser.php">SENIOR CITIZENS</li>
                 </ul>
 
                 <div class="logo">

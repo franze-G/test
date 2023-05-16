@@ -21,18 +21,26 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         header("Location: login.php?error=Password is required");
         exit();
     } else {
-        $sql = "SELECT * FROM user WHERE BINARY username='$uname' AND BINARY password='$pass'";
+        // Modify the SQL query to use the BINARY keyword for case sensitivity
+        $sql = "SELECT * FROM users WHERE BINARY user_name='$uname' AND BINARY password='$pass'";
 
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
-            if ($row['username'] === $uname && $row['password'] === $pass) {
-                $_SESSION['username'] = $row['username'];
+            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+                $_SESSION['user_name'] = $row['user_name'];
                 $_SESSION['name'] = $row['name'];
                 $_SESSION['id'] = $row['id'];
 
-                header("Location: indexDashboard.php");
+                // Customize behavior based on the username
+                if ($row['user_name'] === 'admin') {
+                    // Redirect to the admin dashboard
+                    header("Location: indexDashboard.php");
+                } else {
+                    // Redirect to the user dashboard
+                    header("Location: userdashboard.php");
+                }
                 exit();
             }
         } else {
@@ -43,4 +51,3 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 } else {
     header("Location: login.php");
 }
-?>
